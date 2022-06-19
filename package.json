@@ -1,0 +1,30 @@
+{
+  "name": "pets-r-us",
+  "version": "1.0.0",
+  "description": "web-340 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kails0524/pets-r-us.git"
+  },
+  "keywords": [
+    "start",
+    "dev"
+  ],
+  "author": "Kailee Stephens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kails0524/pets-r-us/issues"
+  },
+  "homepage": "https://github.com/Kails0524/pets-r-us#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
