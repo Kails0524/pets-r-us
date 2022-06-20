@@ -2,13 +2,13 @@ var express = require("express");
 var app = express()
 
 // route to pets-r-us landing page
-app.get("/index", function(request, response) {
+app.get("/index.html", function(request, response) {
     response.send("Welcome to the Pets-R-Us homepage!");
 });
 
 
 // route to grooming page
-app.get("/grooming", function(request, response) {
+app.get("/grooming.html", function(request, response) {
     response.send("Welcome to the Pets-R-Us grooming page.");
 });
 
