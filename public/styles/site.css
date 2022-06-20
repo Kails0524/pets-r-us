@@ -13,6 +13,4 @@
     color: #000000;
     width: 60%; /* Set the width of the positioned div */
     }
-.h1 {
-    
-}
+.img1 { background-image: url("Landing-img.jpg"); }
