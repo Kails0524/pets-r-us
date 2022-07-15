@@ -1,8 +1,12 @@
+.content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .box{
     position: relative;
     display: inline-block; /* Make the width of box same as image */
 }
-
 .box .text{
     position: absolute;
     margin: 0 auto;
@@ -13,19 +17,531 @@
     background: rgba(0, 0, 0, 0);
     color: #000000;
     width: 60%; /* Set the width of the positioned div */
+    }
+.img1 { background-image: url("Landing-img.jpg"); }
+* {
+    box-sizing: border-box;
 }
 
-.home {
-    position: relative;
-    justify-content: center;
-    text-align: left;
-    color: #000000;
+/* nav-menu styling*/
+.wrap {
+    width:100%;
+    height:92px;
+    margin:0;
+    background-color:#1c5766;
+}
+.nav-menu {
+    height:92px;
+    padding:0;
+    margin:0;
+    position:absolute; 
+}
+.nav-menu li{
+    height:auto;
+    width:150px;
+    float:right;
+    text-align:right;
+    list-style:none;
+    font-weight:bold;
+    font-family: 'Arima Madurai', cursive;
+    font-size: xx-large;
+    padding:0;
+    margin:0;
+    background-color:#1c5766;
+    color: #ffff;
+    text-decoration:none;
+}
+.nav-menu a{
+    padding:20px;
+    text-decoration:none;
+    color:white;
+    display:block;
+}
+/* HOME PAGE STYLING*/
+/* Location Hours and Locations information styling */
+.row {
+    display: flex;
+  }
+.column1 {
+    flex: 20%;
+    padding: 10px;
+    height: 300px; 
+    min-width: 250px;
+  }
+.column2 {
+    flex: 80%;
+    padding: 20px;
+    height: 300px; 
+    min-width: 250px;
 }
 
-.home .background-image {
-    position: absolute;
+.home-card1 {
     width: 100%;
-    height: 100%;
-    background-image: url("../images/Landing-img.jpg");
+    margin: auto;
+}
+.home-card2 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    margin: auto;
+}
+.p-style {
+    font-size: 20px;
+}
+.grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-hours {
+    font-size: 20px;
+}
+.company-info {
+    margin-left:10px;
+    margin-right: 10px;
+}
+
+
+
+
+/* Customer testimonial container styling */
+
+.container {
+    border: 5px solid #0a090c;
+    background-color: #a7d6dc;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 45px 0;
+    width: fit-content;
+    max-width: 85%;
+}
+.container span {
+    font-size: 20px;
+    margin: auto
+}
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.title {
+    margin: 0 40px;
+    font-size:45px;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* CSS for header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+  
+.header .logo {
+    font-size: 25px;
+    font-family: 'Sriracha', cursive;
+    color: #000;
+    text-decoration: none;
+    margin-left: 30px;
+}
+  
+.nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f5f5;
+    margin-right: 20px;
+}
+  
+.nav-items a {
+    text-decoration: none;
+    color: #000;
+    padding: 35px 20px;
+}
+ 
+
+
+
+
+
+
+/* styling for main grooming section */
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 520px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("/public/images/aussie.jpg");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  
+.intro h1 {
+    font-family: sans-serif;
+    font-size: 60px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+  
+.intro p {
+    font-size: 30px;
+    color: #d1d1d1;
+    text-transform: uppercase;
+    margin: 80px 120px;
+    text-align: center;
+}
+  
+  
+.grooming {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 80px;
+}
+  
+.grooming .groom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    width: 100%;
+}
+  
+.grooming .groom i {
+    width: fit-content;
+    font-size: 50px;
+    color: #333333;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    padding: 12px;
+}
+  
+.grooming .groom .groom-heading {
+    font-size: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+  
+.grooming .groom .groom-text {
+    font-size: 20px;
+    color: #585858;
+    margin: 10px 0;
+}
+  
+
+
+
+
+
+
+
+
+
+/* styling for main training section */
+.training {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 80px;
+}
+  
+.training .train {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    width: 100%;
+}
+  
+.training .train i {
+    width: fit-content;
+    font-size: 50px;
+    color: #333333;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    padding: 12px;
+}
+  
+.training .train .train-heading {
+    font-size: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+  
+.training .train .train-text {
+    font-size: 20px;
+    color: #585858;
+    margin: 10px 0;
+}
+.train-text a {
+    text-decoration: none;
+    color: #585858;
+}
+
+.train-info {
+    text-align: center;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+.train-info h2 {
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+.more-train-info .train-puppy {
+    margin: 20px 80px;
+}
+.more-train-info .train-adolescent {
+    margin: 20px 80px;
+}
+.more-train-info .train-adult {
+    margin: 20px 80px;
+}
+.more-train-info h3 {
+    margin: 20px 100px;
+}
+.more-train-info p {
+    margin: 20px 100px;
+}
+/*divider styling*/
+hr.rounded {
+    border-top: 4px solid #bbb;
+    border-radius: 5px;
+    max-width: 60%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 50%;
+    margin: auto;
+}
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+.train-container {
+    padding: 2px 16px;
+}
+
+.column3 {
+    flex: 50%;
+    padding: 20px;
+    height: 300px; 
+    min-width: 250px;
+}
+.column4 {
+    flex: 50%;
+    padding: 20px;
+    height: 300px; 
+    min-width: 250px;
+}
+.train-container {
+    border-radius: 15px;
+    padding: 30px;
+    width: fit-content;
+    max-width: 85%;
+    font-size: 25px;
+}
+
+
+
+
+/* styling for main boarding section */
+.boarding {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 80px;
+}
+  
+.boarding .board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    width: 100%;
+}
+  
+.boarding .board i {
+    width: fit-content;
+    font-size: 50px;
+    color: #333333;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    padding: 12px;
+}
+  
+.boarding .board .board-heading {
+    font-size: 20px;
+    color: #333333;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+  
+.boarding .board .board-text {
+    font-size: 20px;
+    color: #585858;
+    margin: 10px 0;
+}
+
+.board-info {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/* CSS for footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#1c5766;
+    ;
+    padding: 40px 80px;
+}
+  
+.footer .copy {
+    color: #fff;
+}
+  
+.bottom-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+}
+  
+.bottom-links .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+  
+.bottom-links .links span {
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+  
+.bottom-links .links a {
+    text-decoration: none;
+    color: #a1a1a1;
+    padding: 10px 20px;
+}
+
+
+
+
+/* Styling for Contact Form*/
+
+
+.contact h1 {
+   text-align: center;
+   color: #0a090c;
+   text-shadow:(1px 1px 0 rgba(white, 1));
+}
+
+.contact h3 {
+   text-align: center;
+   color: #0a090c;
+}
+
+form {
+   max-width: 600px;
+   text-align: center;
+   margin: 20px auto;
+}  
+input, textarea {
+    border:0; outline:0;
+    padding: 1em;
+    border-radius:(8px);
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-family: 'Merriweather', sans-serif;
+    box-shadow:(0 1px 1px rgba(black, 0.1));
+    resize: none;
+    background-color:#FFF3EB
+}    
+:focus {
+    box-shadow:(0 0px 2px rgba(red, 1));
+}
+
+  
+#input-submit {
+     color: #FFF3EB; 
+     background: #eb5e55;
+     cursor: pointer;
+  }    
+:hover {
+    box-shadow: (0 1px 1px 1px rgba(#aaa, 0.6)); 
+}
+
+  
+  textarea {
+      height: 126px;
+  }
+
+
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right { width: 50%; }
+
+.left {
+     margin-right: 2%; 
+}
+
+
+@media (max-width: 480px) {
+  .half {
+     width: 100%; 
+     float: none;
+     margin-bottom: 0; 
+  }
+}
+
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
 }
