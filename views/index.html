@@ -24,14 +24,21 @@
 <body>
     <header><%- include('./partials/header')%></header>
     <div class="content">
-        <div class="wrap">
-            <ul class= "nav-menu">
-                <li><a href="grooming">Grooming</a></li>
-                <li><a href="training">Training</a></li> 
-                <li><a href="boarding">Boarding</a></li>
-                <li><a href="/">Home</a></li>
-            </ul>
-        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="boarding">Boarding</a>
+            <a href="grooming">Grooming</a>
+            <a href="training">Training</a>
+            <div class="dropdown">
+              <button class="dropbtn">My Account
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a style="font-size: 20px;    padding: 18px 16px;" href="registration">Register</a>
+                <a style="font-size: 20px" href="login">Log In</a>
+              </div>
+            </div> 
+          </div>
         <div class="intro">
             <h1>Pets-R-Us</h1>
             <p>Training can be tough, let us help! Choose from one of our many training courses for dogs of all ages.</p>
@@ -131,14 +138,14 @@
             <h3> We would love to hear from you!</h3>
             <form class="cf">
             <div class="half left cf" >
-                <input type="text" id="input-name" placeholder="Name">
-                <input type="email" id="input-email" placeholder="Email address">
-                <input type="text" id="input-subject" placeholder="Subject">
+                <input class="input" type="text" id="input-name" placeholder="Name">
+                <input class="input" type="email" id="input-email" placeholder="Email address">
+                <input class="input" type="text" id="input-subject" placeholder="Subject">
             </div>
             <div class="half right cf">
                 <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
             </div>  
-            <input type="submit" value="Submit" id="input-submit">
+            <input class="input" type="submit" value="Submit" id="input-submit">
             </form></br>
         </section>
     </div>  
