@@ -23,41 +23,82 @@
     box-sizing: border-box;
 }
 
+
+
+
+
+
+
+
+
 /* nav-menu styling*/
-.wrap {
-    width:100%;
-    height:92px;
-    margin:0;
-    background-color:#1c5766;
-}
-.nav-menu {
-    height:92px;
-    padding:0;
-    margin:0;
-    position:absolute; 
-}
-.nav-menu li{
-    height:auto;
-    width:150px;
-    float:right;
-    text-align:right;
-    list-style:none;
-    font-weight:bold;
-    font-family: 'Arima Madurai', cursive;
-    font-size: xx-large;
-    padding:0;
-    margin:0;
-    background-color:#1c5766;
-    color: #ffff;
-    text-decoration:none;
-}
-.nav-menu a{
-    padding:20px;
-    text-decoration:none;
-    color:white;
-    display:block;
-}
-/* HOME PAGE STYLING*/
+
+  .navbar {
+    overflow: hidden;
+    background-color: #1c5766;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 26px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #257e94;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+
+
+
+  /* HOME PAGE STYLING*/
 /* Location Hours and Locations information styling */
 .row {
     display: flex;
@@ -410,12 +451,37 @@ hr.rounded {
 
 
 
+/*Registration Styling*/
 
+.reg-title {
+    text-align: center;
+    font-size: 35px;
+}
+.user-title {
+    text-align: center;
+    font-size: 35px;
+}
 
-
-
-
-
+.input-reg {
+    border:0; outline:0;
+    padding: 10px;
+    border-radius: 8px;
+    display: block;
+    width: 80%;
+    margin-top:20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Merriweather', sans-serif;
+    box-shadow:(0 1px 1px rgba(black, 0.1));
+    resize: none;
+    background-color:#FFF3EB
+}
+.card-reg {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    margin: auto;
+}
 /* CSS for footer */
 .footer {
     display: flex;
@@ -463,7 +529,6 @@ hr.rounded {
 
 /* Styling for Contact Form*/
 
-
 .contact h1 {
    text-align: center;
    color: #0a090c;
@@ -480,7 +545,7 @@ form {
    text-align: center;
    margin: 20px auto;
 }  
-input, textarea {
+.input, textarea {
     border:0; outline:0;
     padding: 1em;
     border-radius:(8px);
