@@ -22,14 +22,21 @@
 
 <body>
         <%- include('./partials/header')%>
-        <div class="wrap">
-            <ul class= "nav-menu">
-                <li><a href="grooming">Grooming</a></li>
-                <li><a href="training">Training</a></li> 
-                <li><a href="boarding">Boarding</a></li>
-                <li><a href="/">Home</a></li>
-            </ul>
-        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="boarding">Boarding</a>
+            <a href="grooming">Grooming</a>
+            <a href="training">Training</a>
+            <div class="dropdown">
+              <button class="dropbtn">My Account
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a style="font-size: 20px;    padding: 18px 16px;" href="registration">Register</a>
+                <a style="font-size: 20px" href="login">Log In</a>
+              </div>
+            </div> 
+          </div>
         <div class="intro">
             <h1>Boarding Services</h1>
             <p>Our boarding services are designed to make your pet feel like they are right at home!</p>
