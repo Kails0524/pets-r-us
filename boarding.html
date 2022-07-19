@@ -1,0 +1,73 @@
+<!--
+  Title: Pets-R-Us Boarding Page
+  Author: Kailee Stephens
+  Date: 06/28/2022
+  Description: html boarding page for Pets-R-Us
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="Boarding Page"
+        content="boarding.html" />
+    
+    <link rel="stylesheet" href="styles/site.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lexend+Deca:wght@200;300;400;500&display=swap" rel="stylesheet">       
+
+    <title>Pets-R-Us</title>
+    
+</head>
+
+<body>
+        <%- include('./partials/header')%>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="boarding">Boarding</a>
+            <a href="grooming">Grooming</a>
+            <a href="training">Training</a>
+            <div class="dropdown">
+              <button class="dropbtn">My Account
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a style="font-size: 20px;    padding: 18px 16px;" href="registration">Register</a>
+                <a style="font-size: 20px" href="login">Log In</a>
+              </div>
+            </div> 
+          </div>
+        <div class="intro">
+            <h1>Boarding Services</h1>
+            <p>Our boarding services are designed to make your pet feel like they are right at home!</p>
+        </div>
+
+        <div class="boarding">
+            <div class="board">
+              <p class="board-heading">1 Dog</p>
+              <p class="board-text">1-5 nights: $40/night</p>
+              <p class="board-text">6+ nights: $35/night</p>
+            </div>
+            <div class="board">
+              <p class="board-heading">2 Dogs</p>
+              <p class="board-text">1-5 nights: $70/night</p>
+              <p class="board-text">6+ nights: $65/night</p>
+            </div>
+            <div class="board">
+              <p class="board-heading">3 Dogs</p>
+              <p class="board-text">1-5 nights: $100/night</p>
+              <p class="board-text">6+ nights: $95/night</p>
+            </div>
+        </div>
+        <div class="board-info">
+            <h2>More Information </h2>
+            <p>If you are able, we highly recommend that you utilize our free boarding trial/tour before a long stay. This allows you and your pet to have peace of mind and comfort in our care. Give us a call for more information! </p>
+            <p>All inclusive stay (Daily walks, playtime, feeding, bedding and 24/7 quality care.</p>
+            <p>We follow your requests for your pets! (feeding times, socialization habits, comfort items at bedtime, and more)</p>
+            <p>Water is accessible 24/7.</p>
+            <p>Grooming and training services are available for your dog at an additional price.</p>
+            <p>Pet siblings are able to stay in the same room for optimum comfort if requested. </p>
+            </br></br>
+        </div>
+        <footer class="footer"><%- include('./partials/footer'); %></footer>
+</body>

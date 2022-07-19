@@ -1,0 +1,68 @@
+<!--
+  Title: Assignment 5.2
+  Author: Kailee Stephens
+  Date: 06/25/2022
+  Description: Grooming Page HTML
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="Grooming Page"
+        content="grooming.html" />
+    
+    <link rel="stylesheet" href="styles/site.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lexend+Deca:wght@200;300;400;500&display=swap" rel="stylesheet">       
+
+    <title>Pets-R-Us</title>
+    
+</head>
+
+<body>
+    <header><%- include('./partials/header')%></header>
+    <div class="navbar">
+      <a href="/">Home</a>
+      <a href="boarding">Boarding</a>
+      <a href="grooming">Grooming</a>
+      <a href="training">Training</a>
+      <div class="dropdown">
+        <button class="dropbtn">My Account
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a style="font-size: 20px;    padding: 18px 16px;" href="registration">Register</a>
+          <a style="font-size: 20px" href="login">Log In</a>
+        </div>
+      </div> 
+    </div>
+        <!--grooming services sections with descriptions-->
+        <div class="intro">
+          <h1>Grooming Services</h1>
+          <p>Our grooming services are listed below and approximately how much they cost per visit. Feel free to call us to get a more accurate estimate for your specific pet!</p>
+        </div>
+        <div class="grooming">
+          <div class="groom">
+            <p class="groom-heading">Ear Cleaning: $10</p>
+            <p class="groom-text">Ear cleaning is a quick and painless process! We provide the most comfortable environment for your pets. </p>
+          </div>
+          <div class="groom">
+            <p class="groom-heading">Bath: $80</p>
+            <p class="groom-text">This is our average bath price for pets. Matting and excessive debris results in a slight up charge so that we are able to give your pet the most comfortable experience possible</p>
+          </div>
+          <div class="groom">
+            <p class="groom-heading">Nail Trim: $10-$20</p>
+            <p class="groom-text">Nail trimming at home can be a daunting task, especially with a restless pet. Additional staff will be used to help keep your pet as calm as possible if needed. </p>
+          </div>
+
+          <div class="groom">
+            <p class="groom-heading">Bundle: $100</p>
+            <p class="groom-text">Save money and time by having us complete all services in the same day with our bundle. No need to make multiple appointments! </p>
+          </div>
+        </div>
+ 
+
+    <footer class="footer"><%- include('./partials/footer'); %>
+</footer>
+</body>

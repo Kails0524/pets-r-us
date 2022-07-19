@@ -1,0 +1,108 @@
+<!--
+  Title: Pets-R-Us Registration Page
+  Author: Kailee Stephens
+  Date: 07/15/2022
+  Description: html registration page for Pets-R-Us
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="Registration Page"
+        content="registration.html" />
+    
+    <link rel="stylesheet" href="styles/site.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lexend+Deca:wght@200;300;400;500&display=swap" rel="stylesheet">       
+
+    <title>Pets-R-Us</title>
+    
+</head>
+
+<body>
+    <header><%- include('./partials/header')%></header>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="boarding">Boarding</a>
+        <a href="grooming">Grooming</a>
+        <a href="training">Training</a>
+        <div class="dropdown">
+          <button class="dropbtn">My Account
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a style="font-size: 20px;    padding: 18px 16px;" href="registration">Register</a>
+            <a style="font-size: 20px" href="login">Log In</a>
+          </div>
+        </div> 
+      </div>
+    <section>
+        <div class="intro">
+            <h1>Register</h1>
+            <p>Create an account with us and join the Pets-R-Us Clan!</p>
+        </div>
+        
+        <h3 class="reg-title">Registration Form</h3>
+        <hr class="rounded">  
+
+        <div class="card-reg">
+            <div class="card-content">
+                <div class="form">
+                    <form action="/registration" method="post">
+                        <br>
+                        <div class="form-field">
+                            <input class="input-reg" type="text" name="username" id="username" required="" autofocus="" placeholder="Username">
+                        </div>
+    
+                        <div class="form-field">
+                            <input class="input-reg" type="password" name="password" id="password" required="" placeholder="Password">
+                        </div>
+    
+                        <div class="form-field">
+                            <input class="input-reg" type="email" name="email" id="email" placeholder="Email">
+                        </div>
+    
+                        <div class="form-field">
+                            <input class="registerBtn" type="submit" value="Register" >
+                        </div>
+                        <br><br>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3 class="user-title">Active Users</h3>
+        <hr class="rounded">  
+        <div class="card">
+            <div class="card-content" style="margin: 30px;">
+                    <% if(users.length> 0) { %>
+                        <table class="center">
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                            </tr>
+                            <tbody>
+                                <% users.forEach(function(user) { %>
+                                    <tr>
+                                        <td>
+                                            <%= user.username %>
+                                        </td>
+                                        <td>
+                                            <%= user.email %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                        <% } else { %>
+                            <h3>Users have not been added to the MongoDB database. Try adding some!</h3>
+                            <% } %>
+                </div>
+        </div>
+
+    </section>
+    <footer class="footer"><%- include('./partials/footer'); %> </footer>
+    
