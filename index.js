@@ -8,8 +8,8 @@ const LocalStrategy = require('passport-local');
 const session = require('express-session');
 
 //Mongoose model imports
-const Users = require('./models/user');
-const { registration } = require('./models/user');
+const User = require('./models/user');
+const { register } = require('./models/user');
 
 const app = express()
 const port = 3000
@@ -50,9 +50,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Passport
-passport.use(new LocalStrategy(Users.authenticate()));
-passport.serializeUser(Users.serializeUser());
-passport.deserializeUser(Users.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 
 // landing page
@@ -73,46 +73,44 @@ app.get("/training", (req, res) => {
     res.sendFile(__dirname + '/views/training.html')
   });
 //Registration Page
-app.get("/registration", (req, res) => {
+app.get("/register", (req, res) => {
   console.log ('line 77')
-    res.sendFile(__dirname + '/views/registration.html')
-});
-// Error if page requested in not found
-app.use(function(request, response) {
-    response.status(404) .send("You missed it!")
-});  
+    res.sendFile(__dirname + '/views/register.html')
+  });
+
 
 //Registration page
-let users = Users.find({}, function(err, users) {
+let users = User.find({}, function(err, users) {
   if (err) {
     console.log(err)
     errorMessage = 'MongoDB Exception: ' + err;
   } else {
     errorMessage = null;
   }
-  console.log ('line 93')
-  app.get('registration', function(req,res) {
-    res.render('/registration', {
+  console.log ('line 90')
+  app.get('register', function(req,res) {
+    res.render('/register', {
       users:users
     })
   })
 })
 
-app.post('/registration', (req, res, next) => {
-  console.log ('line 102')
+app.post('/register', (req, res, next) => {
+  console.log ('line 99')
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
-  console.log ('line 105')
-  Users.registration(new User({username: username, email: email}), password, function (err, user) {
+  console.log ('line 103')
+  User.register(new User({username: username, email: email}), password, function(err, user) {
+    console.log ('line 105')
     if (err) {
       console.log(err);
-      return res.redirect('/registration');
+      return res.redirect('/register');
     }
     passport.authenticate("local")(
       req, res, function () {
         console.log ('line 112')
-        res.redirect('/registration')
+        res.redirect('/register')
     });
   });
 })
@@ -125,11 +123,11 @@ app.post('users', (req, res) => {
     name: userName
   })
 
-  Users.create(user, function (err, user) {
+  User.create(user, function (err, user) {
     if (err) {
       console.log(err);
     } else {
-      res.redirect('registration');
+      res.redirect('register');
     };
   });
 })
@@ -139,3 +137,4 @@ app.post('users', (req, res) => {
 app.listen(port, () =>  {
     console.info("Application listening on port" + port);
 });
+
