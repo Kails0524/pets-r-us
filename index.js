@@ -18,7 +18,7 @@ const Appointment = require('./models/appointments');
 const { render } = require('ejs');
 
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
