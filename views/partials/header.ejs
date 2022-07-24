@@ -2,16 +2,31 @@
 Title: Assignment 5.2
 Author: Kailee Stephens
 Date: 8 July 2022
-Description: Pets-R-Us header.html partial 
+Description: Pets-R-Us header.ejs partial 
 -->
 
 
-<header>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="boarding">Boarding</a>
+        <a href="grooming">Grooming</a>
+        <a href="training">Training</a>
+        <div class="dropdown">
+          <button class="dropbtn">My Account
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <%if(!currentUser){%>
 
-    <div class="wrap">
-        <ul class= "logo">
-            <li><a href="/">Pets-R-Us</a></li>
-        </ul> 
-    </div>
+                <a styling="font-size: 20px;padding: 18px 16px;" href="register">Register</a>
+                <a styling="font-size: 20px;padding: 18px 16px;" href="login">Login</a>
 
-</header>
+                <%}else{%>
+                    <a styling="font-size: 20px;padding: 18px 16px;" href="profile">Profile</a>                  
+                    <a styling="font-size: 20px;padding: 18px 16px;" href="schedule">Schedule</a>
+                    <a styling="font-size: 20px;padding: 18px 16px;" href="logout">Logout</a>
+                    <%}%>
+          </div>
+        </div> 
+      </div>
+    </navbar>
