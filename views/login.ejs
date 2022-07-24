@@ -1,0 +1,55 @@
+<!--
+  Title: Pets-R-Us Landing Page
+  Author: Kailee Stephens
+  Date: 06/28/2022
+  Description: index.html landing page for Pets-R-Us
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description"
+        content="login.html" />
+    
+    <link rel="stylesheet" href="styles/site.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lexend+Deca:wght@200;300;400;500&display=swap" rel="stylesheet">       
+
+    <title>Pets-R-Us</title>
+    
+</head>
+<%- include ('./partials/headers.ejs') %>   
+
+    <section>
+        <div class="intro">
+            <h1>Log In</h1>
+        </div>
+
+        <h3 class="reg-title">Log In</h3>
+        <hr class="rounded">  
+                <form action="/login" method="post">
+                   
+                    <div class="form-field">
+                        <label for="username">Username</label><br />
+
+                        <input type="text" class="input" name="username" id="username" required autofocus>
+                    </div>
+<br>
+                    <div class="form-field">
+                        <label for="password">Password</label><br />
+                        <input type="hidden" name="_csrf"  value="<%= csrfToken %>">
+                        <input type="password" class="input" name="password" id="password" required>
+                    </div>
+<br>
+                    <div class="form-field">
+                        <input type="submit" value="Log in" class="loginBtn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
+
+<footer class="footer"><%- include('./partials/footer'); %> </footer>

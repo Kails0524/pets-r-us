@@ -1,0 +1,58 @@
+<!--
+  Title: Pets-R-Us profile Page
+  Author: Kailee Stephens
+  Date: 07/24/2022
+  Description: profile landing page for Pets-R-Us
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description"
+        content="profile.ejs" />
+    
+    <link rel="stylesheet" href="styles/site.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lexend+Deca:wght@200;300;400;500&display=swap" rel="stylesheet">       
+
+    <title>Pets-R-Us</title>
+    
+</head>
+<body>
+    <%- include ('./partials/headers.ejs') %>
+          
+        <div class="intro">
+            <h1>Pets-R-Us</h1>
+            <p>We care for your pets like they're our family!</p>
+        </div>
+        <section class="profileContainer" style="margin-bottom: 300px">
+            <div class="profile-card">
+              <h1 class="profile-card-title" style="font-size:40px"><%= profilecardTitle %></h1>
+              <!-- logged in user name and email -->
+              <ul style="text-align: left; padding-left: 20px;list-style-type: none;">
+                <% if(currentUser) { %>
+
+                <li style="font-size:25px; padding-left: 50px;"><strong>User name: </strong><%= currentUser %></li><br>
+                <% } %>
+              </ul>
+              <hr class="rounded">  </br> 
+              <!-- displaying logged in user's appointments  -->
+              <div id="appointments" style="margin-left:auto; margin-right:auto;"></div>
+            </div>
+          </section>
+          <script>
+            fetch("/api/appointments")
+              .then((res) => res.json())
+              .then((data) => {
+                let tableString = `<br /><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px;">My Appointments</h4><table id="appointments" class="table" style="margin-left:auto; margin-right:auto;"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
+                // loop over appointment with user's firstName, lastName, email, and services
+                for (let appointment of data) {
+                  tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
+                }
+                tableString += `</table>`;
+                document.getElementById("appointments").innerHTML = tableString;
+              });
+          </script>
+    <%- include('./partials/footer.ejs'); %>
+</body>

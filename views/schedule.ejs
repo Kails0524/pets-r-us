@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PEt-R-Us">
+    <link rel="stylesheet" href="/styles/site.css" />
+
+    <title>Booking</title>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <%- include ('./partials/headers.ejs') %>
+
+        <div id="contactCard"> 
+            <h1 style="padding: 20px;">Schedule Your Appointment</h1>       
+            <form action="/schedule" method="post" id="contactCard">
+                <input name="_csrf" type="hidden" value="<%= csrfToken %>" />
+                <div>
+                    <label for="userName" class="userInp">User Name</label>
+                    <input id="userName" type="text"
+                     class="allInput" name="userName" placeholder="<%= currentUser %>">
+                </div>
+                <div>
+                    <label for="firstName" class="userInp">First Name</label>
+                    <input id="firstName" type="text"
+                     class="allInput" name="firstName" placeholder="First Name">
+                </div>
+                <div>
+                    <label for="LastName" class="userInp">Last Name</label>
+                    <input id="LastName" type="text"
+                     class="allInput" name="lastName" placeholder="Last Name">
+                </div>
+                <div>
+                    <label for="email" class="userInp">Email</label>
+                    <input id="email" type="email" class="allInput" placeholder="Email Address">               
+                </div> 
+                <div>
+                   <div>
+                    <label for="services" class="userInp">Service</label>
+                   </div> 
+                    <select id="services" name="services"  class="emailPut">  
+                        <option value="" style="font:bold;">-- Select A Service --</option>
+                        <% services.forEach(function(service){ %>
+                            <option value="<%= service.value %>"><%= service.text %></option>
+                        <% }) %>              
+                    </select>  
+                </div> 
+                <div>
+                    <button type="submit" id="bntId" class="submitBtn">Book Appointment Now</button>
+                </div>         
+    
+            </form>
+            <br><br>
+        </div>
+    
+    <footer><%- include('./partials/footer.ejs')%></footer>
+</body>
+
+
+
+
+</html>

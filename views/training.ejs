@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="Training Page"
+        content="training.html" />
+    
+    <link rel="stylesheet" href="styles/site.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lexend+Deca:wght@200;300;400;500&display=swap" rel="stylesheet">       
+
+    <title>Pets-R-Us</title>
+    
+</head>
+
+<body>
+    <%- include ('./partials/headers.ejs') %>
+    <!--Training services with prices -->
+    <div class="intro">
+        <h1>Training Services</h1>
+        <p>Training can be tough, let us help! Choose from one of our many training courses for dogs of all ages.</p>
+    </div>
+    <div class="train-info">
+        </br>
+        <h2>Click a service to see details</h2>
+    </div>
+    <div class="training">
+        <div class="train">
+          <p class="train-heading">PUPPY</p>
+          <p class="train-text"><a href="#puppy_training">Puppy Obedience: $450</a></p>
+          <p class="train-text"><a href="#puppy_training">Puppy Advanced Obedience: $650</a></p>
+        </div>
+        <div class="train">
+          <p class="train-heading">ADOLESCENT</p>
+          <p class="train-text"><a href="#adolescent_training">Adolescent Obedience: $450</a></p>
+          <p class="train-text"><a href="#adolescent_training">High Distraction Obedience: $875</a></p>
+        </div>
+        <div class="train">
+          <p class="train-heading">ADULT</p>
+          <p class="train-text"><a href="#adult_training">Adult Obedience: $450</a></p>
+          <p class="train-text"><a href="#adult_training">Owner/Pet Confidence: $850</a></p>
+        </div>
+        
+    </div>            
+    <hr class="rounded">  
+        
+<!--Meet the trainers sections-->
+    <div class="trainers">
+        <h1 style="    margin: 10px 20px;">Meet Our Trainers</h1>
+
+        <div class="row">
+            <div class="column3" >
+                <div class="card">
+                    <img src="/public/images/Alyssa-trainer.jpg" alt="Alyssa" style="width:100%">
+                    <div class="train-container">
+                        <h4><b>Alyssa Jones</b></h4> 
+                        <p>Obedience Trainer</p> 
+                    </div>
+                </div>
+            </div>
+            <div class="column4" >
+                <div class="card">
+                    <img src="/public/images/Harry-trainer.jpg" alt="Harry" style="width:100%">
+                    <div class="train-container">
+                        <h4><b>Harry Phillips</b></h4> 
+                        <p>Specialized trainer</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+    <!--training service descriptions-->
+    <div class="more-train-info">
+            <div class="train-puppy">
+                <a id="puppy_training">
+                <h2>PUPPY:</h2>
+                <h3>Puppy Obedience</h3>
+                <p>This training course consists of 4 lessons with our obedience trainer. Your puppy will learn: potty training, preventing nipping and jumping, and other naughty puppy behavior. The basic commands that your puppy will learn: come, sit, stay, down, and heel.</p>
+
+                <h3>Puppy Advanced Obedience</h3>
+                <p>This training course consists of 6 sessions with our obedience trainer. All of the concepts in the Puppy Obedience course will be learned here as well as on and off leash training.</p>
+            </div>
+        </br>
+            <div class="train-adolescent"><a id="adolescent_training">
+                <h2>ADOLESCENT:</h2>
+                <h3>Adolescent Obedience</h3>
+                <p>This course consists of 4 lessons with our obedience trainer specifically for adolescent dogs that have not been to an obedience class before. The basic commands will be covered: come, sit, stay, down, heel.</p>
+
+                <h3>High Distraction Obedience</h3>
+                <p>This course consists of 8 lessons with our specialized obedience trainer. Your dog will learn everything in the Adolescent Obedience courses as well as adding high distraction training. This includes off leash commands with other dogs/people/distractions around.</p>
+            </div>
+        </br>
+            <div class="train-adult"><a id="adult_training">
+                <h2>ADULT:</h2>
+                <h3>Adult Obedience</h3>
+                <p>This course consists of 4 lessons with our obedience trainer specifically for adult dogs that have not been to an obedience class before. The basic commands will be covered: come, sit, stay, down, heel. Off leash training without distractions is also covered.</p>
+
+                <h3>Owner/Pet Confidence</h3>
+                <p>This course consists of 8 lessons with our specialized obedience trainer. This is an ideal course for reactive and/or fearful dogs who need appropriate confidence around other people and dogs. Learn how to work with your dog to build confidence in new situations and help your pet learn appropriate behavior when around other people or dogs. </p>
+                </br>
+            </div>
+    </div>
+    <footer class="footer"><%- include('./partials/footer'); %></footer>
+</body>
