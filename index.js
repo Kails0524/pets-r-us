@@ -18,7 +18,7 @@ const Appointment = require('./models/appointments');
 const { render } = require('ejs');
 
 const app = express()
-const PORT = process.env.PORT || 3000;
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: true}));
@@ -39,6 +39,8 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+const PORT = process.env.PORT || 3000;
 
 //Passport
 app.use(passport.initialize());
@@ -270,7 +272,7 @@ app.get("/profile", isLoggedIn, async (req, res) => {
 }); 
 
 
-// Listen on port 3000
+// Listen on PORT 3000
 app.listen(PORT, () =>  {
     console.info("Application listening on port" + PORT);
 });
