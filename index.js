@@ -271,6 +271,6 @@ app.get("/profile", isLoggedIn, async (req, res) => {
 
 
 // Listen on port 3000
-app.listen(port, () =>  {
+app.listen(PORT, () =>  {
     console.info("Application listening on port" + port);
 });
